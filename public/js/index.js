@@ -1,5 +1,5 @@
 //dp
-const socket = io.connect('http://localhost:4000')
+const socket = io.connect('https://socket-game-demo.herokuapp.com');
 
 socket.on('left', (data) => {
   state.left = data.toggle;
