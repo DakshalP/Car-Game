@@ -1,3 +1,10 @@
+//dp
+const socket = io.connect('http://localhost:4000')
+
+socket.on('left', () => {
+  state.left = true;
+})
+
 // 定义全局变量
 let container, scene, camera, renderer, controls;
 let keyboard = new THREEx.KeyboardState();
