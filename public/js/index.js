@@ -316,11 +316,14 @@ function update() {
     movingCar.material.color.setHex(0xe91e63);
     console.log("Crash");
     if (crashId !== lastCrashId) {
-      if (score > 100) {
-        score -= 100;
-      } else {
-        score = 0;
-      }
+      // if (score > 100) {
+      //   score -= 100;
+      // } else {
+      //   score = 0;
+      // }
+      
+      //crash results in score reset
+      score = 0;
       lastCrashId = crashId;
     }
   } else {
