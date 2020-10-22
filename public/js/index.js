@@ -1,9 +1,13 @@
 //dp
 const socket = io.connect('http://localhost:4000')
 
-socket.on('left', () => {
-  state.left = true;
+socket.on('left', (data) => {
+  state.left = data.toggle;
 })
+socket.on('right', (data) => {
+  state.right = data.toggle;
+})
+
 
 // 定义全局变量
 let container, scene, camera, renderer, controls;
