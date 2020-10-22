@@ -79,7 +79,24 @@ div {
 	left: 80px;
 	top: 0;
 	color: black;
-	font-size: 24px;
-	font-weight: 600;
+	font-size: 50px;
+	font-family: sans-serif;
+	font-weight: 700;
 	padding: 10px 20px;
+}
+
+#join-link {
+	position: fixed;
+	left: 50px;
+	bottom: 0;
+	color: lightgray;
+	font-size: 50px;
+	font-family: sans-serif;
+	font-weight: 700;
+	padding: 10px 20px;
+	text-transform: uppercase;
+}
+
+#join-link > span {
+	color: white;
 }
