@@ -7,8 +7,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
     <style> 
     body {display: flex;}
-    #left {width:50vw; height: 100vh; background-color: red; font-size: 50px; font-weight: bold; color: white; transition: 0.2s all;}
-    #right {width:50vw; height: 100vh; background-color: blue; font-size: 50px; font-weight: bold; color: white; transition: 0.2s all;}
+    #left {width:50vw; height: 100vh; background-color: red; font-size: 50px; font-weight: bold; color: white; transition: 0.2s all; user-select: none;}
+    #right {width:50vw; height: 100vh; background-color: blue; font-size: 50px; font-weight: bold; color: white; transition: 0.2s all; user-select: none;}
     #left:active, #right:active {font-size: 70px;}
     </style>
 </head>
@@ -25,22 +25,22 @@
             socket.emit('left', {
                 toggle: true
             });
-        })
-        leftBtn.addEventListener('mouseup', () => {
-            socket.emit('left', {
-                toggle: false
-            });
+            delayStop('left')
         })
         rightBtn.addEventListener('mousedown', () => {
             socket.emit('right', {
                 toggle: true
             });
+            delayStop('right')
         })
-        rightBtn.addEventListener('mouseup', () => {
-            socket.emit('right', {
-                toggle: false
-            });
-        })
+
+        function delayStop(side) {
+            setTimeout(() => {
+                socket.emit(side, {
+                    toggle: false
+                });
+            }, 150);
+        }
 
     </script>
 </body>
